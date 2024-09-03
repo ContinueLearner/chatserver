@@ -7,7 +7,7 @@ using json = nlohmann::json;
 using namespace std;
  
 
-void func01()
+string func01()
 {
 	json js;
 	js["msgtype"] = 2;
@@ -16,8 +16,8 @@ void func01()
 	js["msg"] = "hello,what are you doing";
 	
 	string sendBuf = js.dump();
-	cout<<sendBuf<<endl;
-	
+	//cout<<sendBuf<<endl;
+	return sendBuf;
 }
 
 void func02()
@@ -54,6 +54,12 @@ void func03()
 }
 int main()
 {
-	func03();
+	//func03();
+    string recvBuf = func01();
+	json js = json::parse(recvBuf);
+	cout<<js["msgtype"]<<endl;
+	cout<<js["from"]<<endl;
+	cout<<js["to"]<<endl;
+	cout<<js["msg"]<<endl;
 	return 0;
 }
