@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/root/CHAT/build/src/server",
+  "command": "/usr/bin/g++  -I/root/CHAT/include -I/root/CHAT/include/server -g -g -o CMakeFiles/ChatServer.dir/chatserver.cpp.o -c /root/CHAT/src/server/chatserver.cpp",
+  "file": "/root/CHAT/src/server/chatserver.cpp",
+  "output": "src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o"
+},
+{
+  "directory": "/root/CHAT/build/src/server",
+  "command": "/usr/bin/g++  -I/root/CHAT/include -I/root/CHAT/include/server -g -g -o CMakeFiles/ChatServer.dir/main.cpp.o -c /root/CHAT/src/server/main.cpp",
+  "file": "/root/CHAT/src/server/main.cpp",
+  "output": "src/server/CMakeFiles/ChatServer.dir/main.cpp.o"
+}
+]
