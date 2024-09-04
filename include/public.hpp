@@ -5,7 +5,8 @@
 enum MsgType
 {
     MSG_LOGIN = 1,
-    MSG_REG
+    MSG_REG,
+    REG_MSG_ACK
 };
 
 #endif

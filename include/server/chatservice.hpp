@@ -4,6 +4,7 @@
 #include<muduo/net/TcpConnection.h>
 #include<unordered_map>
 #include<functional>
+#include"usermodel.hpp"
 #include"json.hpp"
 using namespace std;
 using namespace muduo;
@@ -23,7 +24,7 @@ public:
 private:
     ChatService();
     unordered_map<int,MsgHandler> _msgHandlerMap;
-
+    UserModel _userModel;
 };
 
 #endif

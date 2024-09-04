@@ -51,3 +51,9 @@ MYSQL_RES* MySQL::query(string sql)
     }
     return mysql_use_result(_conn);
 }
+
+// 获取连接
+MYSQL* MySQL::getConnection()
+{
+    return _conn;
+}

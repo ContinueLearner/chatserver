@@ -244,7 +244,9 @@ src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: \
  /usr/include/c++/9/unordered_map /usr/include/c++/9/bits/hashtable.h \
  /usr/include/c++/9/bits/hashtable_policy.h \
  /usr/include/c++/9/bits/unordered_map.h \
- /usr/include/c++/9/bits/erase_if.h /root/CHAT/thirdparty/json.hpp \
+ /usr/include/c++/9/bits/erase_if.h \
+ /root/CHAT/include/server/model/usermodel.hpp \
+ /root/CHAT/include/server/model/user.hpp /root/CHAT/thirdparty/json.hpp \
  /usr/include/c++/9/cassert /usr/include/c++/9/ciso646 \
  /usr/include/c++/9/numeric /usr/include/c++/9/bits/stl_numeric.h \
  /usr/include/c++/9/forward_list /usr/include/c++/9/bits/forward_list.h \

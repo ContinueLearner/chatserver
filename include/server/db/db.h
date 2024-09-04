@@ -18,6 +18,7 @@ public:
     // 查询操作
     MYSQL_RES *query(string sql);
 
+    MYSQL* getConnection();
 private:
     MYSQL *_conn;
 };
