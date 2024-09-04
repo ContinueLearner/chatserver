@@ -247,4 +247,29 @@ src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o: \
  /usr/include/c++/9/bits/erase_if.h /usr/include/muduo/net/EventLoop.h \
  /usr/include/c++/9/atomic /usr/include/muduo/base/Mutex.h \
  /usr/include/muduo/base/CurrentThread.h /usr/include/muduo/net/TimerId.h \
- /usr/include/c++/9/iostream
+ /root/CHAT/include/server/chatservice.hpp \
+ /usr/include/c++/9/unordered_map /usr/include/c++/9/bits/hashtable.h \
+ /usr/include/c++/9/bits/hashtable_policy.h \
+ /usr/include/c++/9/bits/unordered_map.h /root/CHAT/thirdparty/json.hpp \
+ /usr/include/c++/9/cassert /usr/include/c++/9/ciso646 \
+ /usr/include/c++/9/numeric /usr/include/c++/9/bits/stl_numeric.h \
+ /usr/include/c++/9/forward_list /usr/include/c++/9/bits/forward_list.h \
+ /usr/include/c++/9/bits/forward_list.tcc /usr/include/c++/9/valarray \
+ /usr/include/c++/9/cmath /usr/include/math.h \
+ /usr/include/x86_64-linux-gnu/bits/math-vector.h \
+ /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
+ /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
+ /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h \
+ /usr/include/x86_64-linux-gnu/bits/iscanonical.h \
+ /usr/include/c++/9/bits/valarray_array.h \
+ /usr/include/c++/9/bits/valarray_array.tcc \
+ /usr/include/c++/9/bits/valarray_before.h \
+ /usr/include/c++/9/bits/slice_array.h \
+ /usr/include/c++/9/bits/valarray_after.h \
+ /usr/include/c++/9/bits/gslice.h /usr/include/c++/9/bits/gslice_array.h \
+ /usr/include/c++/9/bits/mask_array.h \
+ /usr/include/c++/9/bits/indirect_array.h /usr/include/c++/9/iostream
