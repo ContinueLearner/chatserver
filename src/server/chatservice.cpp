@@ -31,6 +31,10 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
         }
         else
         {
+            {
+                lock_guard<mutex> lock(_connMutex);
+                _userConnMap.insert({id,conn});
+            }
             user.setState("online");
             _userModel.updateState(user);
 
