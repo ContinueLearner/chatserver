@@ -315,6 +315,13 @@ src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o: /root/CHAT/src/server/cha
   /usr/include/c++/9/bits/hashtable.h \
   /usr/include/c++/9/bits/hashtable_policy.h \
   /usr/include/c++/9/bits/unordered_map.h \
+  /usr/include/c++/9/mutex \
+  /usr/include/c++/9/chrono \
+  /usr/include/c++/9/ratio \
+  /usr/include/c++/9/ctime \
+  /usr/include/c++/9/bits/parse_numbers.h \
+  /usr/include/c++/9/bits/std_mutex.h \
+  /usr/include/c++/9/bits/unique_lock.h \
   /root/CHAT/include/server/model/usermodel.hpp \
   /root/CHAT/include/server/model/user.hpp \
   /root/CHAT/thirdparty/json.hpp \
@@ -346,7 +353,9 @@ src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o: /root/CHAT/src/server/cha
   /usr/include/c++/9/bits/gslice_array.h \
   /usr/include/c++/9/bits/mask_array.h \
   /usr/include/c++/9/bits/indirect_array.h \
-  /usr/include/c++/9/iostream
+  /usr/include/c++/9/iostream \
+  /usr/include/muduo/base/Logging.h \
+  /usr/include/muduo/base/LogStream.h
 
 src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: /root/CHAT/src/server/chatservice.cpp \
   /usr/include/stdc-predef.h \
@@ -650,6 +659,13 @@ src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: /root/CHAT/src/server/ch
   /usr/include/c++/9/bits/hashtable_policy.h \
   /usr/include/c++/9/bits/unordered_map.h \
   /usr/include/c++/9/bits/erase_if.h \
+  /usr/include/c++/9/mutex \
+  /usr/include/c++/9/chrono \
+  /usr/include/c++/9/ratio \
+  /usr/include/c++/9/ctime \
+  /usr/include/c++/9/bits/parse_numbers.h \
+  /usr/include/c++/9/bits/std_mutex.h \
+  /usr/include/c++/9/bits/unique_lock.h \
   /root/CHAT/include/server/model/usermodel.hpp \
   /root/CHAT/include/server/model/user.hpp \
   /root/CHAT/thirdparty/json.hpp \
@@ -1224,6 +1240,13 @@ src/server/CMakeFiles/ChatServer.dir/main.cpp.o: /root/CHAT/src/server/main.cpp 
   /usr/include/c++/9/bits/hashtable.h \
   /usr/include/c++/9/bits/hashtable_policy.h \
   /usr/include/c++/9/bits/unordered_map.h \
+  /usr/include/c++/9/mutex \
+  /usr/include/c++/9/chrono \
+  /usr/include/c++/9/ratio \
+  /usr/include/c++/9/ctime \
+  /usr/include/c++/9/bits/parse_numbers.h \
+  /usr/include/c++/9/bits/std_mutex.h \
+  /usr/include/c++/9/bits/unique_lock.h \
   /root/CHAT/include/server/model/usermodel.hpp \
   /root/CHAT/include/server/model/user.hpp \
   /root/CHAT/thirdparty/json.hpp \
@@ -1467,11 +1490,11 @@ src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o: /root/CHAT/src/serve
 
 /root/CHAT/src/server/db/db.cpp:
 
+/root/CHAT/include/public.hpp:
+
 /usr/include/muduo/base/LogStream.h:
 
 /usr/include/muduo/base/Logging.h:
-
-/root/CHAT/include/public.hpp:
 
 /usr/include/c++/9/iostream:
 
@@ -1514,6 +1537,14 @@ src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o: /root/CHAT/src/serve
 /root/CHAT/include/server/model/user.hpp:
 
 /root/CHAT/include/server/model/usermodel.hpp:
+
+/usr/include/c++/9/bits/std_mutex.h:
+
+/usr/include/c++/9/bits/parse_numbers.h:
+
+/usr/include/c++/9/ctime:
+
+/usr/include/c++/9/mutex:
 
 /usr/include/c++/9/bits/unordered_map.h:
 
@@ -1606,6 +1637,8 @@ src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o: /root/CHAT/src/serve
 /usr/include/c++/9/ext/alloc_traits.h:
 
 /usr/include/asm-generic/errno.h:
+
+/usr/include/c++/9/chrono:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
@@ -1807,6 +1840,8 @@ src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o: /root/CHAT/src/serve
 
 /usr/include/c++/9/bits/atomic_lockfree_defines.h:
 
+/usr/include/c++/9/ratio:
+
 /usr/include/c++/9/type_traits:
 
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
@@ -2004,6 +2039,8 @@ src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o: /root/CHAT/src/serve
 /usr/include/errno.h:
 
 /usr/local/include/boost/config/detail/select_compiler_config.hpp:
+
+/usr/include/c++/9/bits/unique_lock.h:
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
 

@@ -250,7 +250,11 @@ src/server/CMakeFiles/ChatServer.dir/main.cpp.o: \
  /root/CHAT/include/server/chatservice.hpp \
  /usr/include/c++/9/unordered_map /usr/include/c++/9/bits/hashtable.h \
  /usr/include/c++/9/bits/hashtable_policy.h \
- /usr/include/c++/9/bits/unordered_map.h \
+ /usr/include/c++/9/bits/unordered_map.h /usr/include/c++/9/mutex \
+ /usr/include/c++/9/chrono /usr/include/c++/9/ratio \
+ /usr/include/c++/9/ctime /usr/include/c++/9/bits/parse_numbers.h \
+ /usr/include/c++/9/bits/std_mutex.h \
+ /usr/include/c++/9/bits/unique_lock.h \
  /root/CHAT/include/server/model/usermodel.hpp \
  /root/CHAT/include/server/model/user.hpp /root/CHAT/thirdparty/json.hpp \
  /usr/include/c++/9/cassert /usr/include/c++/9/ciso646 \

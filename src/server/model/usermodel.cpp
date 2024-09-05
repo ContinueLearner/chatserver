@@ -53,7 +53,7 @@ bool UserModel::updateState(User user)
 {
     //1.组装sql语句
     char sql[1024] = {0};
-    sprintf(sql,"update user set state = %s where id = %d",user.getState().c_str(),user.getId());
+    sprintf(sql,"update user set state = '%s' where id = %d",user.getState().c_str(),user.getId());
 
     MySQL mysql;
     if(mysql.connect())

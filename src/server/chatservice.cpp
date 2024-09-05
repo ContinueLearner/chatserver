@@ -36,7 +36,11 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
                 _userConnMap.insert({id,conn});
             }
             user.setState("online");
-            _userModel.updateState(user);
+            bool flag = _userModel.updateState(user);
+
+            //测试代码
+            //if(flag)LOG_INFO<<"更新成功";
+            //else LOG_INFO<<"更新失败";
 
             json response;
             response["msgid"] = LOGIN_MSG_ACK;
@@ -100,4 +104,29 @@ ChatService::ChatService()
 {
     _msgHandlerMap.insert({MSG_LOGIN, bind(&ChatService::login, this, _1, _2, _3)});
     _msgHandlerMap.insert({MSG_REG, bind(&ChatService::reg, this, _1, _2, _3)});
+}
+
+void ChatService::clientCloseException(const TcpConnectionPtr & conn)
+{
+    User user;
+    {
+        lock_guard<mutex> lock(_connMutex);
+        for (auto it = _userConnMap.begin(); it != _userConnMap.end(); ++it)
+        {
+            if (it->second == conn)
+            {
+                // 从map表删除用户的链接信息
+                user.setId(it->first);
+                _userConnMap.erase(it);
+                break;
+            }
+        }
+    }
+
+    if(user.getId() != -1)
+    {
+        LOG_INFO<<"异常断开连接,设置状态为offline";
+        user.setState("offline");
+        _userModel.updateState(user);
+    }
 }

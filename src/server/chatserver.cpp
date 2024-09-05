@@ -4,6 +4,7 @@
 #include <iostream>
 #include <functional>
 #include <string>
+#include <muduo/base/Logging.h>
 using namespace std;
 using namespace placeholders;
 using json = nlohmann::json;
@@ -26,6 +27,8 @@ void ChatServer::onConnection(const TcpConnectionPtr &conn)
 {
     if (!conn->connected())
     {
+        LOG_INFO<<"异常断开连接";
+        ChatService::instance()->clientCloseException(conn);
         conn->shutdown();
     }
 }
