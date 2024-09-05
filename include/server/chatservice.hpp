@@ -27,6 +27,8 @@ public:
     void oneChat(const TcpConnectionPtr &conn,json &js,Timestamp time);
 
     void clientCloseException(const TcpConnectionPtr & conn);
+
+    void reset();
 private:
     ChatService();
 

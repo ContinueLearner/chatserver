@@ -158,3 +158,8 @@ void ChatService::oneChat(const TcpConnectionPtr &conn,json &js,Timestamp time)
     //离线消息
     _offlineMsgModel.insert(toid,js.dump());
 }
+
+void ChatService::reset()
+{
+    _userModel.resetState();
+}

@@ -16,7 +16,7 @@ public:
     bool updateState(User user);
 
     // 重置用户的状态信息
-    //void resetState();
+    void resetState();
 };
 
 #endif
