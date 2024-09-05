@@ -46,7 +46,17 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
             response["msgid"] = LOGIN_MSG_ACK;
             response["errno"] = 0;
             response["errmsg"] = "login success";
+
+            vector<string> vec = _offlineMsgModel.query(id);
+            if(!vec.empty())
+            {
+                response["offlinemsg"] = vec;
+                //移除消息
+                _offlineMsgModel.remove(id);
+            }
             conn->send(response.dump());
+
+            
         }
     }
     else
@@ -102,8 +112,8 @@ MsgHandler ChatService::getHandler(int msgid)
 }
 ChatService::ChatService()
 {
-    _msgHandlerMap.insert({MSG_LOGIN, bind(&ChatService::login, this, _1, _2, _3)});
-    _msgHandlerMap.insert({MSG_REG, bind(&ChatService::reg, this, _1, _2, _3)});
+    _msgHandlerMap.insert({LOGIN_MSG, bind(&ChatService::login, this, _1, _2, _3)});
+    _msgHandlerMap.insert({REG_MSG, bind(&ChatService::reg, this, _1, _2, _3)});
     _msgHandlerMap.insert({ONE_CHAT_MSG,bind(&ChatService::oneChat,this,_1,_2,_3)});
 }
 
@@ -137,11 +147,14 @@ void ChatService::oneChat(const TcpConnectionPtr &conn,json &js,Timestamp time)
     int toid = js["toid"].get<int>();
     {
         lock_guard<mutex> lock(_connMutex);
-        auto it = _userConnMap.find(toid)
+        auto it = _userConnMap.find(toid);
         if(it != _userConnMap.end())
         {
             it->second->send(js.dump());
             return;
         }
     }
+
+    //离线消息
+    _offlineMsgModel.insert(toid,js.dump());
 }

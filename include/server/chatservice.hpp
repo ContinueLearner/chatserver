@@ -7,6 +7,7 @@
 #include<mutex>
 #include"usermodel.hpp"
 #include"json.hpp"
+#include "offlinemessagemodel.hpp"
 using namespace std;
 using namespace muduo;
 using namespace muduo::net;
@@ -37,6 +38,7 @@ private:
 
     UserModel _userModel;
 
+    OfflineMsgModel _offlineMsgModel;
 };
 
 #endif

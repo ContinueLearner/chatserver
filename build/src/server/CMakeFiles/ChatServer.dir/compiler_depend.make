@@ -353,6 +353,7 @@ src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o: /root/CHAT/src/server/cha
   /usr/include/c++/9/bits/gslice_array.h \
   /usr/include/c++/9/bits/mask_array.h \
   /usr/include/c++/9/bits/indirect_array.h \
+  /root/CHAT/include/server/model/offlinemessagemodel.hpp \
   /usr/include/c++/9/iostream \
   /usr/include/muduo/base/Logging.h \
   /usr/include/muduo/base/LogStream.h
@@ -701,6 +702,7 @@ src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: /root/CHAT/src/server/ch
   /usr/include/c++/9/bits/gslice_array.h \
   /usr/include/c++/9/bits/mask_array.h \
   /usr/include/c++/9/bits/indirect_array.h \
+  /root/CHAT/include/server/model/offlinemessagemodel.hpp \
   /root/CHAT/include/public.hpp \
   /usr/include/muduo/base/Logging.h \
   /usr/include/muduo/base/LogStream.h
@@ -1278,6 +1280,7 @@ src/server/CMakeFiles/ChatServer.dir/main.cpp.o: /root/CHAT/src/server/main.cpp 
   /usr/include/c++/9/bits/gslice_array.h \
   /usr/include/c++/9/bits/mask_array.h \
   /usr/include/c++/9/bits/indirect_array.h \
+  /root/CHAT/include/server/model/offlinemessagemodel.hpp \
   /usr/include/c++/9/iostream
 
 src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o: /root/CHAT/src/server/model/usermodel.cpp \
@@ -1497,6 +1500,8 @@ src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o: /root/CHAT/src/serve
 /usr/include/muduo/base/Logging.h:
 
 /usr/include/c++/9/iostream:
+
+/root/CHAT/include/server/model/offlinemessagemodel.hpp:
 
 /usr/include/c++/9/bits/gslice.h:
 

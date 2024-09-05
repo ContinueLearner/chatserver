@@ -278,5 +278,7 @@ src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o: \
  /usr/include/c++/9/bits/valarray_after.h \
  /usr/include/c++/9/bits/gslice.h /usr/include/c++/9/bits/gslice_array.h \
  /usr/include/c++/9/bits/mask_array.h \
- /usr/include/c++/9/bits/indirect_array.h /usr/include/c++/9/iostream \
- /usr/include/muduo/base/Logging.h /usr/include/muduo/base/LogStream.h
+ /usr/include/c++/9/bits/indirect_array.h \
+ /root/CHAT/include/server/model/offlinemessagemodel.hpp \
+ /usr/include/c++/9/iostream /usr/include/muduo/base/Logging.h \
+ /usr/include/muduo/base/LogStream.h
