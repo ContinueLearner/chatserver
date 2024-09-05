@@ -104,6 +104,7 @@ ChatService::ChatService()
 {
     _msgHandlerMap.insert({MSG_LOGIN, bind(&ChatService::login, this, _1, _2, _3)});
     _msgHandlerMap.insert({MSG_REG, bind(&ChatService::reg, this, _1, _2, _3)});
+    _msgHandlerMap.insert({ONE_CHAT_MSG,bind(&ChatService::oneChat,this,_1,_2,_3)});
 }
 
 void ChatService::clientCloseException(const TcpConnectionPtr & conn)
@@ -128,5 +129,19 @@ void ChatService::clientCloseException(const TcpConnectionPtr & conn)
         LOG_INFO<<"异常断开连接,设置状态为offline";
         user.setState("offline");
         _userModel.updateState(user);
+    }
+}
+
+void ChatService::oneChat(const TcpConnectionPtr &conn,json &js,Timestamp time)
+{
+    int toid = js["toid"].get<int>();
+    {
+        lock_guard<mutex> lock(_connMutex);
+        auto it = _userConnMap.find(toid)
+        if(it != _userConnMap.end())
+        {
+            it->second->send(js.dump());
+            return;
+        }
     }
 }
