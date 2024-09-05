@@ -6,6 +6,7 @@
 #include<functional>
 #include<mutex>
 #include"usermodel.hpp"
+#include"groupmodel.hpp"
 #include"json.hpp"
 #include "offlinemessagemodel.hpp"
 #include "friendmodel.hpp"
@@ -33,6 +34,12 @@ public:
 
     //添加好友
     void addFriend(const TcpConnectionPtr &conn,json &js,Timestamp time);
+     // 创建群组业务
+    void createGroup(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    // 加入群组业务
+    void addGroup(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    // 群组聊天业务
+    void groupChat(const TcpConnectionPtr &conn, json &js, Timestamp time);
 private:
     ChatService();
 
@@ -47,6 +54,8 @@ private:
     OfflineMsgModel _offlineMsgModel;
 
     FriendModel _friendModel;
+
+    GroupModel _groupModel;
 };
 
 #endif
