@@ -25,6 +25,12 @@
 },
 {
   "directory": "/root/CHAT/build/src/server",
+  "command": "/usr/bin/g++  -I/root/CHAT/include -I/root/CHAT/include/server -I/root/CHAT/include/server/db -I/root/CHAT/include/server/model -I/root/CHAT/thirdparty -g -g -o CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o -c /root/CHAT/src/server/model/friendmodel.cpp",
+  "file": "/root/CHAT/src/server/model/friendmodel.cpp",
+  "output": "src/server/CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o"
+},
+{
+  "directory": "/root/CHAT/build/src/server",
   "command": "/usr/bin/g++  -I/root/CHAT/include -I/root/CHAT/include/server -I/root/CHAT/include/server/db -I/root/CHAT/include/server/model -I/root/CHAT/thirdparty -g -g -o CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o -c /root/CHAT/src/server/model/offlinemessagemodel.cpp",
   "file": "/root/CHAT/src/server/model/offlinemessagemodel.cpp",
   "output": "src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o"

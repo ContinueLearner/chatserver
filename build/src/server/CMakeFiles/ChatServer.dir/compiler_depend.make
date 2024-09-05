@@ -354,6 +354,7 @@ src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o: /root/CHAT/src/server/cha
   /usr/include/c++/9/bits/mask_array.h \
   /usr/include/c++/9/bits/indirect_array.h \
   /root/CHAT/include/server/model/offlinemessagemodel.hpp \
+  /root/CHAT/include/server/model/friendmodel.hpp \
   /usr/include/c++/9/iostream \
   /usr/include/muduo/base/Logging.h \
   /usr/include/muduo/base/LogStream.h
@@ -703,6 +704,7 @@ src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: /root/CHAT/src/server/ch
   /usr/include/c++/9/bits/mask_array.h \
   /usr/include/c++/9/bits/indirect_array.h \
   /root/CHAT/include/server/model/offlinemessagemodel.hpp \
+  /root/CHAT/include/server/model/friendmodel.hpp \
   /root/CHAT/include/public.hpp \
   /usr/include/muduo/base/Logging.h \
   /usr/include/muduo/base/LogStream.h
@@ -1281,6 +1283,7 @@ src/server/CMakeFiles/ChatServer.dir/main.cpp.o: /root/CHAT/src/server/main.cpp 
   /usr/include/c++/9/bits/mask_array.h \
   /usr/include/c++/9/bits/indirect_array.h \
   /root/CHAT/include/server/model/offlinemessagemodel.hpp \
+  /root/CHAT/include/server/model/friendmodel.hpp \
   /usr/include/c++/9/iostream \
   /usr/include/signal.h \
   /usr/include/x86_64-linux-gnu/bits/signum.h \
@@ -1841,6 +1844,8 @@ src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o: /root/CHAT/src/serve
 /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
 
 /usr/include/x86_64-linux-gnu/asm/sockios.h:
+
+/root/CHAT/include/server/model/friendmodel.hpp:
 
 /usr/include/asm-generic/bitsperlong.h:
 

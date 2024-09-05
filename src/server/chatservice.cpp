@@ -47,6 +47,7 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
             response["errno"] = 0;
             response["errmsg"] = "login success";
 
+            //查询离线消息
             vector<string> vec = _offlineMsgModel.query(id);
             if(!vec.empty())
             {
@@ -54,9 +55,24 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
                 //移除消息
                 _offlineMsgModel.remove(id);
             }
-            conn->send(response.dump());
 
-            
+            //查询好友列表
+            vector<User> userVec = _friendModel.query(id);
+            if(!userVec.empty())
+            {
+                vector<string> vec2;
+                for(auto &User:userVec)
+                {
+                    json js;
+                    js["id"] = User.getId();
+                    js["name"] = User.getName();
+                    js["state"] = User.getState();
+                    vec2.push_back(js.dump());
+                }
+                response["friends"] = vec2;
+            }
+
+            conn->send(response.dump());
         }
     }
     else
@@ -115,6 +131,7 @@ ChatService::ChatService()
     _msgHandlerMap.insert({LOGIN_MSG, bind(&ChatService::login, this, _1, _2, _3)});
     _msgHandlerMap.insert({REG_MSG, bind(&ChatService::reg, this, _1, _2, _3)});
     _msgHandlerMap.insert({ONE_CHAT_MSG,bind(&ChatService::oneChat,this,_1,_2,_3)});
+    _msgHandlerMap.insert({ADD_FRIEND_MSG,bind(&ChatService::addFriend,this,_1,_2,_3)});
 }
 
 void ChatService::clientCloseException(const TcpConnectionPtr & conn)
@@ -162,4 +179,12 @@ void ChatService::oneChat(const TcpConnectionPtr &conn,json &js,Timestamp time)
 void ChatService::reset()
 {
     _userModel.resetState();
+}
+
+void ChatService::addFriend(const TcpConnectionPtr &conn,json &js,Timestamp time)
+{
+    int id = js["id"].get<int>();
+    int friendid = js["friendid"].get<int>();
+
+    _friendModel.insert(id,friendid);
 }

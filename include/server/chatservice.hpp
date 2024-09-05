@@ -8,6 +8,7 @@
 #include"usermodel.hpp"
 #include"json.hpp"
 #include "offlinemessagemodel.hpp"
+#include "friendmodel.hpp"
 using namespace std;
 using namespace muduo;
 using namespace muduo::net;
@@ -29,6 +30,9 @@ public:
     void clientCloseException(const TcpConnectionPtr & conn);
 
     void reset();
+
+    //添加好友
+    void addFriend(const TcpConnectionPtr &conn,json &js,Timestamp time);
 private:
     ChatService();
 
@@ -41,6 +45,8 @@ private:
     UserModel _userModel;
 
     OfflineMsgModel _offlineMsgModel;
+
+    FriendModel _friendModel;
 };
 
 #endif

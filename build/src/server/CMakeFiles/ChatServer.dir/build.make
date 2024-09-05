@@ -125,10 +125,24 @@ src/server/CMakeFiles/ChatServer.dir/db/db.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ChatServer.dir/db/db.cpp.s"
 	cd /root/CHAT/build/src/server && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CHAT/src/server/db/db.cpp -o CMakeFiles/ChatServer.dir/db/db.cpp.s
 
+src/server/CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o: src/server/CMakeFiles/ChatServer.dir/flags.make
+src/server/CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o: /root/CHAT/src/server/model/friendmodel.cpp
+src/server/CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o: src/server/CMakeFiles/ChatServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/server/CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o"
+	cd /root/CHAT/build/src/server && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/server/CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o -MF CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o.d -o CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o -c /root/CHAT/src/server/model/friendmodel.cpp
+
+src/server/CMakeFiles/ChatServer.dir/model/friendmodel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ChatServer.dir/model/friendmodel.cpp.i"
+	cd /root/CHAT/build/src/server && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/CHAT/src/server/model/friendmodel.cpp > CMakeFiles/ChatServer.dir/model/friendmodel.cpp.i
+
+src/server/CMakeFiles/ChatServer.dir/model/friendmodel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ChatServer.dir/model/friendmodel.cpp.s"
+	cd /root/CHAT/build/src/server && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/CHAT/src/server/model/friendmodel.cpp -o CMakeFiles/ChatServer.dir/model/friendmodel.cpp.s
+
 src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o: src/server/CMakeFiles/ChatServer.dir/flags.make
 src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o: /root/CHAT/src/server/model/offlinemessagemodel.cpp
 src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o: src/server/CMakeFiles/ChatServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o"
 	cd /root/CHAT/build/src/server && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o -MF CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o.d -o CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o -c /root/CHAT/src/server/model/offlinemessagemodel.cpp
 
 src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.i: cmake_force
@@ -142,7 +156,7 @@ src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.s: cmake_forc
 src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o: src/server/CMakeFiles/ChatServer.dir/flags.make
 src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o: /root/CHAT/src/server/model/usermodel.cpp
 src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o: src/server/CMakeFiles/ChatServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/root/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o"
 	cd /root/CHAT/build/src/server && /usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o -MF CMakeFiles/ChatServer.dir/model/usermodel.cpp.o.d -o CMakeFiles/ChatServer.dir/model/usermodel.cpp.o -c /root/CHAT/src/server/model/usermodel.cpp
 
 src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.i: cmake_force
@@ -159,6 +173,7 @@ ChatServer_OBJECTS = \
 "CMakeFiles/ChatServer.dir/chatservice.cpp.o" \
 "CMakeFiles/ChatServer.dir/main.cpp.o" \
 "CMakeFiles/ChatServer.dir/db/db.cpp.o" \
+"CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o" \
 "CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o" \
 "CMakeFiles/ChatServer.dir/model/usermodel.cpp.o"
 
@@ -169,11 +184,12 @@ ChatServer_EXTERNAL_OBJECTS =
 /root/CHAT/bin/ChatServer: src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o
 /root/CHAT/bin/ChatServer: src/server/CMakeFiles/ChatServer.dir/main.cpp.o
 /root/CHAT/bin/ChatServer: src/server/CMakeFiles/ChatServer.dir/db/db.cpp.o
+/root/CHAT/bin/ChatServer: src/server/CMakeFiles/ChatServer.dir/model/friendmodel.cpp.o
 /root/CHAT/bin/ChatServer: src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o
 /root/CHAT/bin/ChatServer: src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o
 /root/CHAT/bin/ChatServer: src/server/CMakeFiles/ChatServer.dir/build.make
 /root/CHAT/bin/ChatServer: src/server/CMakeFiles/ChatServer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable /root/CHAT/bin/ChatServer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/root/CHAT/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable /root/CHAT/bin/ChatServer"
 	cd /root/CHAT/build/src/server && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ChatServer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

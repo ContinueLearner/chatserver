@@ -280,6 +280,7 @@ src/server/CMakeFiles/ChatServer.dir/main.cpp.o: \
  /usr/include/c++/9/bits/mask_array.h \
  /usr/include/c++/9/bits/indirect_array.h \
  /root/CHAT/include/server/model/offlinemessagemodel.hpp \
+ /root/CHAT/include/server/model/friendmodel.hpp \
  /usr/include/c++/9/iostream /usr/include/signal.h \
  /usr/include/x86_64-linux-gnu/bits/signum.h \
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
