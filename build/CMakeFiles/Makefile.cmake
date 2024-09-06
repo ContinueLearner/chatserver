@@ -12,6 +12,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.26.0/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.26.0/CMakeSystem.cmake"
   "/root/CHAT/src/CMakeLists.txt"
+  "/root/CHAT/src/client/CMakeLists.txt"
   "/root/CHAT/src/server/CMakeLists.txt"
   "/root/miniconda3/lib/python3.8/site-packages/cmake/data/share/cmake-3.26/Modules/CMakeCInformation.cmake"
   "/root/miniconda3/lib/python3.8/site-packages/cmake/data/share/cmake-3.26/Modules/CMakeCXXInformation.cmake"
@@ -43,9 +44,11 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/server/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/client/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "src/server/CMakeFiles/ChatServer.dir/DependInfo.cmake"
+  "src/client/CMakeFiles/ChatClient.dir/DependInfo.cmake"
   )
