@@ -256,10 +256,14 @@ src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o: \
  /usr/include/c++/9/bits/std_mutex.h \
  /usr/include/c++/9/bits/unique_lock.h \
  /root/CHAT/include/server/model/usermodel.hpp \
- /root/CHAT/include/server/model/user.hpp /root/CHAT/thirdparty/json.hpp \
- /usr/include/c++/9/cassert /usr/include/c++/9/ciso646 \
- /usr/include/c++/9/numeric /usr/include/c++/9/bits/stl_numeric.h \
- /usr/include/c++/9/forward_list /usr/include/c++/9/bits/forward_list.h \
+ /root/CHAT/include/server/model/user.hpp \
+ /root/CHAT/include/server/model/groupmodel.hpp \
+ /root/CHAT/include/server/model/group.hpp \
+ /root/CHAT/include/server/model/groupuser.hpp \
+ /root/CHAT/thirdparty/json.hpp /usr/include/c++/9/cassert \
+ /usr/include/c++/9/ciso646 /usr/include/c++/9/numeric \
+ /usr/include/c++/9/bits/stl_numeric.h /usr/include/c++/9/forward_list \
+ /usr/include/c++/9/bits/forward_list.h \
  /usr/include/c++/9/bits/forward_list.tcc /usr/include/c++/9/valarray \
  /usr/include/c++/9/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \

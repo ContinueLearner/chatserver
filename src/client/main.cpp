@@ -17,7 +17,6 @@ using json = nlohmann::json;
 #include <arpa/inet.h>
 #include <semaphore.h>
 #include <atomic>
-
 #include "group.hpp"
 #include "user.hpp"
 #include "public.hpp"
@@ -36,7 +35,6 @@ bool isMainMenuRunning = false;
 sem_t rwsem;
 // 记录登录状态
 atomic_bool g_isLoginSuccess{false};
-
 
 // 接收线程
 void readTaskHandler(int clientfd);
@@ -126,14 +124,15 @@ int main(int argc, char **argv)
             g_isLoginSuccess = false;
 
             int len = send(clientfd, request.c_str(), strlen(request.c_str()) + 1, 0);
+
             if (len == -1)
             {
                 cerr << "send login msg error:" << request << endl;
             }
 
             sem_wait(&rwsem); // 等待信号量，由子线程处理完登录的响应消息后，通知这里
-                
-            if (g_isLoginSuccess) 
+
+            if (g_isLoginSuccess)
             {
                 // 进入聊天主菜单页面
                 isMainMenuRunning = true;
@@ -161,7 +160,7 @@ int main(int argc, char **argv)
             {
                 cerr << "send reg msg error:" << request << endl;
             }
-            
+
             sem_wait(&rwsem); // 等待信号量，子线程处理完注册消息会通知
         }
         break;
@@ -188,7 +187,7 @@ void doRegResponse(json &responsejs)
     else // 注册成功
     {
         cout << "name register success, userid is " << responsejs["id"]
-                << ", do not forget it!" << endl;
+             << ", do not forget it!" << endl;
     }
 }
 
@@ -269,12 +268,12 @@ void doLoginResponse(json &responsejs)
                 if (ONE_CHAT_MSG == js["msgid"].get<int>())
                 {
                     cout << js["time"].get<string>() << " [" << js["id"] << "]" << js["name"].get<string>()
-                            << " said: " << js["msg"].get<string>() << endl;
+                         << " said: " << js["msg"].get<string>() << endl;
                 }
                 else
                 {
                     cout << "群消息[" << js["groupid"] << "]:" << js["time"].get<string>() << " [" << js["id"] << "]" << js["name"].get<string>()
-                            << " said: " << js["msg"].get<string>() << endl;
+                         << " said: " << js["msg"].get<string>() << endl;
                 }
             }
         }
@@ -289,13 +288,12 @@ void readTaskHandler(int clientfd)
     for (;;)
     {
         char buffer[1024] = {0};
-        int len = recv(clientfd, buffer, 1024, 0);  // 阻塞了
+        int len = recv(clientfd, buffer, 1024, 0); // 阻塞了
         if (-1 == len || 0 == len)
         {
             close(clientfd);
             exit(-1);
         }
-
         // 接收ChatServer转发的数据，反序列化生成json数据对象
         json js = json::parse(buffer);
         int msgtype = js["msgid"].get<int>();
@@ -323,7 +321,7 @@ void readTaskHandler(int clientfd)
         if (REG_MSG_ACK == msgtype)
         {
             doRegResponse(js);
-            sem_post(&rwsem);    // 通知主线程，注册结果处理完成
+            sem_post(&rwsem); // 通知主线程，注册结果处理完成
             continue;
         }
     }
@@ -565,7 +563,7 @@ void loginout(int clientfd, string)
     else
     {
         isMainMenuRunning = false;
-    }   
+    }
 }
 
 // 获取系统时间（聊天信息需要添加时间信息）

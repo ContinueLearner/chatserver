@@ -41,12 +41,12 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
             //测试代码
             //if(flag)LOG_INFO<<"更新成功";
             //else LOG_INFO<<"更新失败";
-
             json response;
             response["msgid"] = LOGIN_MSG_ACK;
             response["errno"] = 0;
             response["errmsg"] = "login success";
-
+            response["id"] = user.getId();
+            response["name"] = user.getName();
             //查询离线消息
             vector<string> vec = _offlineMsgModel.query(id);
             if(!vec.empty())
@@ -71,7 +71,6 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
                 }
                 response["friends"] = vec2;
             }
-
             conn->send(response.dump());
         }
     }
@@ -132,6 +131,12 @@ ChatService::ChatService()
     _msgHandlerMap.insert({REG_MSG, bind(&ChatService::reg, this, _1, _2, _3)});
     _msgHandlerMap.insert({ONE_CHAT_MSG,bind(&ChatService::oneChat,this,_1,_2,_3)});
     _msgHandlerMap.insert({ADD_FRIEND_MSG,bind(&ChatService::addFriend,this,_1,_2,_3)});
+    _msgHandlerMap.insert({LOGINOUT_MSG, bind(&ChatService::loginout, this, _1, _2, _3)});
+
+    // 群组业务管理相关事件处理回调注册
+    _msgHandlerMap.insert({CREATE_GROUP_MSG, std::bind(&ChatService::createGroup, this, _1, _2, _3)});
+    _msgHandlerMap.insert({ADD_GROUP_MSG, std::bind(&ChatService::addGroup, this, _1, _2, _3)});
+    _msgHandlerMap.insert({GROUP_CHAT_MSG, std::bind(&ChatService::groupChat, this, _1, _2, _3)});
 }
 
 void ChatService::clientCloseException(const TcpConnectionPtr & conn)
@@ -242,4 +247,25 @@ void ChatService::groupChat(const TcpConnectionPtr &conn, json &js, Timestamp ti
             }
         }
     }
+}
+
+void ChatService::loginout(const TcpConnectionPtr &conn,json &js,Timestamp time)
+{
+    int userid = js["id"].get<int>();
+
+    {
+        lock_guard<mutex> lock(_connMutex);
+        auto it = _userConnMap.find(userid);
+        if (it != _userConnMap.end())
+        {
+            _userConnMap.erase(it);
+        }
+    }
+
+    // 用户注销，相当于就是下线，在redis中取消订阅通道
+    //_redis.unsubscribe(userid); 
+
+    // 更新用户的状态信息
+    User user(userid, "", "", "offline");
+    _userModel.updateState(user);
 }

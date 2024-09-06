@@ -30,6 +30,8 @@ public:
 
     void clientCloseException(const TcpConnectionPtr & conn);
 
+    void loginout(const TcpConnectionPtr &conn,json &js,Timestamp time);
+
     void reset();
 
     //添加好友
